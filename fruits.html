@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Список фруктів</title>
+  <style>
+    body {
+      background-color: #f5baba; /* Світлий фон */
+      font-family: Arial, sans-serif;
+    }
+
+    ol {
+      list-style: none;
+      counter-reset: fruit;
+      padding: 0;
+      max-width: 400px;
+      margin: 50px auto;
+    }
+
+    li {
+      background-color: #c86b6b; /* Темніший фон для елементів */
+      margin: 10px 0;
+      padding: 10px 20px;
+      position: relative;
+      border-radius: 5px;
+    }
+
+    li::before {
+      counter-increment: fruit;
+      content: counter(fruit) ".";
+      position: absolute;
+      left: -30px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-weight: bold;
+      color: white;
+    }
+
+    li span {
+      background-color: #963636; /* Найтемніший фон лише під текстом */
+      color: white;
+      padding: 6px 12px;
+      border-radius: 4px;
+      display: inline-block;
+    }
+
+    li:nth-child(5) {
+      background-color: #a94442; /* Більш темний фон у одного елементу */
+    }
+  </style>
+</head>
+<body>
+  <ol>
+    <li><span>Apple</span></li>
+    <li><span>Orange</span></li>
+    <li><span>Pineapple</span></li>
+    <li><span>Pear</span></li>
+    <li><span>Cherry</span></li>
+  </ol>
+</body>
+</html>
